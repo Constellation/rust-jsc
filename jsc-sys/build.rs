@@ -43,9 +43,9 @@ fn main() {
 	println!("cargo:rustc-link-lib=static=WTF");
 	println!("cargo:rustc-link-lib=static=bmalloc");
 
-    let lib = pkg_config::find_library("icu").unwrap();
+    let lib = pkg_config::find_library("icu-uc").unwrap();
     for library in &lib.libs {
-        println!("cargo:rustc-link-lib=dynamic={}", library);
+        println!("cargo:rustc-link-lib=dylib={}", library);
     }
 
 	println!("cargo:rustc-link-lib=static=icuuc");
