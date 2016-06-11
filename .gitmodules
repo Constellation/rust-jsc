@@ -1,0 +1,3 @@
+[submodule "jsc-sys/WebKit"]
+	path = jsc-sys/WebKit
+	url = https://github.com/WebKit/webkit.git

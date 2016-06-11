@@ -1,0 +1,10 @@
+[package]
+name = "jsc"
+version = "0.1.0"
+authors = ["Yusuke Suzuki <utatane.tea@gmail.com>"]
+
+[[test]]
+name = "simple"
+
+[dependencies]
+jsc-sys = { path = "jsc-sys", version = "0.1.0" }
