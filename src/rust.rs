@@ -23,6 +23,7 @@
 */
 
 use api;
+use std::ptr;
 
 pub struct VM {
     group : api::JSContextGroupRef
@@ -42,6 +43,28 @@ impl Drop for VM {
     fn drop(&mut self) {
         unsafe {
             api::JSContextGroupRelease(self.group);
+        }
+    }
+}
+
+pub struct Context {
+    global: api::JSGlobalContextRef
+}
+
+impl Context {
+    pub fn new(vm : &VM) -> Context {
+        unsafe {
+            Context {
+                global: api::JSGlobalContextCreateInGroup(vm.group, ptr::null_mut()),
+            }
+        }
+    }
+}
+
+impl Drop for Context {
+    fn drop(&mut self) {
+        unsafe {
+            api::JSGlobalContextRelease(self.global);
         }
     }
 }

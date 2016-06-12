@@ -26,9 +26,10 @@
 
 extern crate jsc_sys;
 pub mod api;
-pub mod vm;
+pub mod rust;
 
-pub use vm::VM;
+pub use rust::VM;
+pub use rust::Context;
 
 #[cfg(test)]
 mod tests {

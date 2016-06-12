@@ -35,6 +35,7 @@ fn simple() {
 }
 
 #[test]
-fn rust_vm() {
+fn context() {
     let vm = jsc::VM::new();
+    let context = jsc::Context::new(&vm);
 }
