@@ -8,6 +8,7 @@ build = "build.rs"
 [lib]
 name = "jsc_sys"
 path = "lib.rs"
+crate-type = ["dylib"]
 
 [build-dependencies]
 pkg-config = "0.3"
