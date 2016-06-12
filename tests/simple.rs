@@ -38,4 +38,17 @@ fn simple() {
 fn context() {
     let vm = jsc::VM::new();
     let context = jsc::Context::new(&vm);
+    let string = jsc::String::new("Hello World");
+    {
+        let value = jsc::Value::with_boolean(&context, false);
+        assert!(value.is_boolean(&context));
+    }
+
+    {
+        let value = jsc::Value::with_number(&context, 42 as f64);
+        match value.to_number(&context) {
+            Ok(n) => assert_eq!(n, 42 as f64),
+            Err(_) => unreachable!(),
+        }
+    }
 }
