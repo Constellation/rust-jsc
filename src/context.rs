@@ -22,17 +22,7 @@
   THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#![allow(non_camel_case_types, non_snake_case)]
+use api;
 
-extern crate jsc_sys;
-pub mod api;
-pub mod vm;
-
-pub use vm::VM;
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-    }
+pub struct Context {
 }

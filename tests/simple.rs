@@ -21,15 +21,20 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
   THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+#![allow(unused_variables)]
 
 extern crate jsc;
-use jsc::api::JSContextGroupCreate;
-use jsc::api::JSContextGroupRelease;
+use jsc::api;
 
 #[test]
 fn simple() {
     unsafe {
-        let vm = JSContextGroupCreate();
-        JSContextGroupRelease(vm);
+        let vm = api::JSContextGroupCreate();
+        api::JSContextGroupRelease(vm);
     }
+}
+
+#[test]
+fn rust_vm() {
+    let vm = jsc::VM::new();
 }

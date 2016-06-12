@@ -22,17 +22,26 @@
   THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#![allow(non_camel_case_types, non_snake_case)]
+use api;
 
-extern crate jsc_sys;
-pub mod api;
-pub mod vm;
+pub struct VM {
+    group : api::JSContextGroupRef
+}
 
-pub use vm::VM;
+impl VM {
+    pub fn new() -> VM {
+        unsafe {
+            VM {
+                group: api::JSContextGroupCreate(),
+            }
+        }
+    }
+}
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
+impl Drop for VM {
+    fn drop(&mut self) {
+        unsafe {
+            api::JSContextGroupRelease(self.group);
+        }
     }
 }
