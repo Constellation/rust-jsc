@@ -24,6 +24,7 @@
 #![allow(unused_variables)]
 
 extern crate jsc;
+extern crate url;
 use jsc::api;
 
 #[test]
@@ -50,5 +51,35 @@ fn context() {
             Ok(n) => assert_eq!(n, 42 as f64),
             Err(_) => unreachable!(),
         }
+    }
+}
+
+#[test]
+fn eval() {
+    let vm = jsc::VM::new();
+    let context = jsc::Context::new(&vm);
+    {
+        let source = url::Url::parse("https://webkit.org").unwrap();
+        let object = jsc::Object::array(&context, &[]).unwrap();
+        let result = context.evaluate_script("42", &object, source, 0).unwrap();
+        assert!(result.is_number(&context));
+    }
+    {
+        let source = url::Url::parse("https://webkit.org").unwrap();
+        let object = jsc::Object::array(&context, &[]).unwrap();
+        let result = context.evaluate_script("deadbeef", &object, source, 0);
+        assert!(!result.is_ok());
+    }
+}
+
+#[test]
+fn check_syntax() {
+    let vm = jsc::VM::new();
+    let context = jsc::Context::new(&vm);
+
+    {
+        let source = url::Url::parse("https://webkit.org").unwrap();
+        let result = context.check_syntax("function", source, 0);
+        assert!(!result.is_ok());
     }
 }
