@@ -1,3 +1,5 @@
 all:
+	@mkdir -p WebKit/Source/WebCore
+	@mkdir -p WebKit/Source/WebKit
 	cd WebKit \
 	&& Tools/Scripts/build-jsc --jsc-only --cmakeargs="-DDEBUG_FISSION=OFF -DENABLE_STATIC_JSC=ON -DENABLE_FTL_JIT=ON" \
