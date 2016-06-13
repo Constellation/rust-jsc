@@ -8,6 +8,7 @@ license = "BSD"
 readme = "jsc-sys/README.md"
 homepage = "https://github.com/Constellation/rust-jsc"
 repository = "https://github.com/Constellation/rust-jsc.git"
+description = "WebKit JavaScriptCore bundle"
 exclude = [
     "WebKit/LayoutTests/*",
     "WebKit/PerformanceTests/*",
