@@ -10,11 +10,16 @@ homepage = "https://github.com/Constellation/rust-jsc"
 repository = "https://github.com/Constellation/rust-jsc.git"
 description = "WebKit JavaScriptCore bundle"
 exclude = [
+    "WebKit/Examples/*",
     "WebKit/LayoutTests/*",
-    "WebKit/PerformanceTests/*",
     "WebKit/ManualTests/*",
-    "WebKit/WebKitBuild/*",
+    "WebKit/PerformanceTests/*",
+    "WebKit/Source/WebCore/*",
+    "WebKit/Source/WebKit/*",
+    "WebKit/Source/WebKit2/*",
     "WebKit/Source/JavaScriptCore/tests/*",
+    "WebKit/WebKitBuild/*",
+    "WebKit/Websites/*",
 ]
 
 [lib]
