@@ -4,6 +4,17 @@ version = "0.1.0"
 authors = ["Yusuke Suzuki <utatane.tea@gmail.com>"]
 links = "JavaScriptCore"
 build = "build.rs"
+license = "BSD"
+readme = "jsc-sys/README.md"
+homepage = "https://github.com/Constellation/rust-jsc"
+repository = "https://github.com/Constellation/rust-jsc.git"
+exclude = [
+    "WebKit/LayoutTests/*",
+    "WebKit/PerformanceTests/*",
+    "WebKit/ManualTests/*",
+    "WebKit/WebKitBuild/*",
+    "WebKit/Source/JavaScriptCore/tests/*",
+]
 
 [lib]
 name = "jsc_sys"
