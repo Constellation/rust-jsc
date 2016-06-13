@@ -1,7 +1,15 @@
 [package]
-authors = ["Yusuke Suzuki <utatane.tea@gmail.com>"]
 name = "jsc"
 version = "0.1.0+r201969"
+authors = ["Yusuke Suzuki <utatane.tea@gmail.com>"]
+license = "BSD-2-Clause"
+readme = "README.md"
+homepage = "https://github.com/Constellation/rust-jsc"
+repository = "https://github.com/Constellation/rust-jsc.git"
+description = "rust bindings to WebKit JavaScriptCore"
+exclude = [
+    "jsc-sys/*"
+]
 
 [dependencies]
 jsc-sys = "0.1.2" #+r201969
