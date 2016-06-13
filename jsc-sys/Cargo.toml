@@ -19,6 +19,7 @@ exclude = [
     "WebKit/Source/WebKit2/*",
     "WebKit/Source/JavaScriptCore/tests/*",
     "WebKit/WebKitBuild/*",
+    "WebKit/WebKitLibraries/*",
     "WebKit/Websites/*",
 ]
 
