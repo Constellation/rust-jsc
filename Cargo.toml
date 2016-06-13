@@ -1,14 +1,11 @@
 [package]
 authors = ["Yusuke Suzuki <utatane.tea@gmail.com>"]
 name = "jsc"
-version = "0.1.0"
+version = "0.1.0+r201969"
 
 [dependencies]
+jsc-sys = "0.1.2" #+r201969
 url = "1.1.1"
-
-[dependencies.jsc-sys]
-path = "jsc-sys"
-version = "0.1.0"
 
 [[test]]
 name = "simple"
