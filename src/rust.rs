@@ -23,6 +23,7 @@
 */
 
 extern crate url;
+extern crate jsc_sys;
 use api;
 use std::ptr;
 use std::ffi;

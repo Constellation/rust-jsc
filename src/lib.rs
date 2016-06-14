@@ -24,11 +24,10 @@
 
 #![allow(non_camel_case_types, non_snake_case)]
 
-extern crate jsc_sys;
 pub mod api;
 pub mod rust;
 
-pub use rust::{VM, Context, String, Value, Object};
+pub use self::rust::{VM, Context, String, Value, Object};
 
 #[cfg(test)]
 mod tests {
